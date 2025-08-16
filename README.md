@@ -1,6 +1,14 @@
 # MantaGO Website
 
-A modern, responsive one-page website showcasing MantaGO products and Eslitec's capabilities under the leadership of Sebastien Khoo MBA.
+A modern, responsive one-page website showcasing MantaGO products and Eslitec Pte. Ltd.'s capabilities under the leadership of Khoo Yong Ming (邱永明).
+
+## Company Information
+- **Company Name**: ESLITEC PTE. LTD.
+- **UEN**: 202536043D
+- **Incorporation Date**: 15 August 2025
+- **Type**: Exempt Private Company Limited by Shares
+- **Primary Activity**: Development of Software and Applications (SSIC 62011)
+- **Registered Address**: 33 Ubi Avenue 3, #08-13, Vertex, Singapore 408868
 
 ## 🚀 Features
 
@@ -279,5 +287,12 @@ For technical support or customization requests:
 
 ---
 
-**Built with ❤️ by Eslitec**  
+**Built with ❤️ by Eslitec Pte. Ltd.**  
 *Transform Your Business Operations with MantaGO*
+
+---
+
+## Related Links
+- **MantaGO Website**: https://mantago.cc
+- **MantaGO Blog**: https://blog.mantago.cc
+- **GitHub**: https://github.com/Eslitec-Org
