@@ -3362,3 +3362,35 @@ textarea:focus {
     display: none !important;
   }
 }
+
+/* Leader Photo Placeholder */
+.leader-photo-placeholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.leader-photo-placeholder i {
+    font-size: 80px;
+    color: white;
+    opacity: 0.9;
+}
+
+/* MantaGO Chat Widget Override */
+#mantagoChat {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    z-index: 9998 !important;
+}
+
+#mantagoChat-iframe {
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+}
