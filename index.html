@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MantaGO - Transform Your Business Operations | Eslitec</title>
+    <meta name="description" content="MantaGO by Eslitec - Revolutionary business operations platform led by Sebastien Khoo MBA. Transform your workflow with cutting-edge technology.">
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <meta property="og:title" content="MantaGO - Transform Your Business Operations | Eslitec">
+    <meta property="og:description" content="Revolutionary business operations platform that streamlines workflows, optimizes processes, and accelerates growth. Experience the future with cutting-edge technology.">
+    <meta property="og:image" content="https://mantago.cc/assets/og-image.jpg">
+    <meta property="og:url" content="https://mantago.cc">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MantaGO by Eslitec">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MantaGO - Transform Your Business Operations">
+    <meta name="twitter:description" content="Revolutionary business operations platform that streamlines workflows and accelerates growth.">
+    <meta name="twitter:image" content="https://mantago.cc/assets/twitter-card.jpg">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Eslitec">
+    <meta name="keywords" content="business operations, workflow automation, process optimization, business transformation, enterprise software, MantaGO, Eslitec">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Eslitec",
+        "url": "https://mantago.cc",
+        "logo": "https://mantago.cc/assets/eslitec-logo.svg",
+        "description": "Leading provider of business operations transformation solutions",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "33 Ubi Avenue 3, #08-13, Vertex",
+            "addressLocality": "Singapore",
+            "postalCode": "408868",
+            "addressCountry": "SG"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+65-1234-5678",
+            "contactType": "customer service",
+            "email": "hello@eslitec.com"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Khoo Yong Ming",
+            "jobTitle": "Director",
+            "nationality": "Singapore"
+        },
+        "product": {
+            "@type": "SoftwareApplication",
+            "name": "MantaGO",
+            "description": "Comprehensive business operations platform",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based, iOS, Android"
+        }
+    }
+    </script>
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.eslitec.com/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.eslitec.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.eslitec.com/favicon.ico">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip Navigation Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navbar" class="skip-link">Skip to navigation</a>
+    
+    <!-- High Contrast Mode Toggle -->
+    <button class="accessibility-toggle" id="contrastToggle" aria-label="Toggle high contrast mode">
+        <i class="fas fa-eye"></i>
+    </button>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="assets/eslitec-logo.svg" alt="Eslitec" class="loading-logo-img">
+                <span class="loading-brand-text">MantaGO</span>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Initializing your business transformation...</p>
+        </div>
+    </div>
+    
+    <!-- Browser Update Notification -->
+    <div class="browser-update-banner" id="browserUpdateBanner" style="display: none;">
+        <div class="container">
+            <div class="browser-update-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Your browser is outdated. Please update for the best experience.</span>
+                <button class="browser-update-close" id="closeBrowserBanner">&times;</button>
+            </div>
+        </div>
+    </div>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/eslitec-logo.svg" alt="Eslitec" class="nav-logo">
+                <span class="nav-brand-text">MantaGO</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#product" class="nav-link">Product</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-title-main">MantaGO</span>
+                        <span class="hero-title-sub typewriter" data-text="Transform Your Business Operations"></span>
+                    </h1>
+                    <p class="hero-description">
+                        Revolutionary platform that streamlines workflows, optimizes processes, and accelerates growth. 
+                        Experience the future of business operations with cutting-edge technology and expert guidance.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large" id="learnMoreBtn">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary btn-large" id="scheduleDemoBtn">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Schedule Demo</span>
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat fade-in-up" data-delay="0">
+                            <span class="stat-number counter" data-target="500">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Businesses Transformed</span>
+                        </div>
+                        <div class="stat fade-in-up" data-delay="200">
+                            <span class="stat-number counter" data-target="95">0</span><span class="stat-plus">%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="stat fade-in-up" data-delay="400">
+                            <span class="stat-number counter" data-target="40">0</span><span class="stat-plus">%</span>
+                            <span class="stat-label">Average ROI Increase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <div class="hero-portrait">
+                            <img src="assets/khoo-yong-ming.jpg" alt="Khoo Yong Ming - Director Eslitec" class="portrait-image">
+                            <div class="portrait-badge">
+                                <span class="badge-text">Khoo Yong Ming</span>
+                                <span class="badge-subtitle">Director, Eslitec Pte. Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="hero-tech-visual">
+                            <div class="tech-circle tech-circle-1"></div>
+                            <div class="tech-circle tech-circle-2"></div>
+                            <div class="tech-circle tech-circle-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Eslitec</span>
+                <h2 class="section-title">Pioneering Innovation in Business Technology</h2>
+                <p class="section-description">
+                    Founded on the principle of transforming complex business challenges into streamlined solutions, 
+                    Eslitec stands at the forefront of operational excellence.
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-leader">
+                    <div class="leader-image">
+                        <img src="assets/khoo-yong-ming-profile.jpg" alt="Khoo Yong Ming" class="leader-photo">
+                        <div class="leader-background"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Khoo Yong Ming</h3>
+                        <p class="leader-title">Director & Founder</p>
+                        <p class="leader-description">
+                            As the Director and Founder of Eslitec Pte. Ltd., Khoo Yong Ming leads our mission to 
+                            revolutionize how businesses operate through innovative software development and applications. 
+                            With extensive experience in technology innovation, he drives our vision of delivering 
+                            accessible, powerful business solutions that transform operations and accelerate growth.
+                        </p>
+                        <div class="leader-credentials">
+                            <div class="credential">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Software Development Leader</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-award"></i>
+                                <span>Technology Innovation</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-rocket"></i>
+                                <span>Innovation Leader</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-values">
+                    <h3 class="values-title">Our Core Values</h3>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4 class="value-name">Innovation</h4>
+                            <p class="value-description">Constantly pushing boundaries to deliver cutting-edge solutions</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4 class="value-name">Partnership</h4>
+                            <p class="value-description">Building lasting relationships through trust and collaboration</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="value-name">Excellence</h4>
+                            <p class="value-description">Delivering exceptional quality in every project and interaction</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="value-name">Impact</h4>
+                            <p class="value-description">Creating meaningful change that drives business growth</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-vision">
+                    <div class="vision-content">
+                        <h3 class="vision-title">Our Vision</h3>
+                        <p class="vision-text">
+                            To become the global leader in business operation transformation, empowering organizations 
+                            of all sizes to achieve unprecedented efficiency and growth through innovative technology solutions.
+                        </p>
+                        <div class="vision-metrics">
+                            <div class="metric">
+                                <span class="metric-number">10+</span>
+                                <span class="metric-label">Countries Served</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">250+</span>
+                                <span class="metric-label">Team Members</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">99.9%</span>
+                                <span class="metric-label">Uptime Guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vision-visual">
+                        <div class="vision-graphic">
+                            <div class="graphic-element graphic-1"></div>
+                            <div class="graphic-element graphic-2"></div>
+                            <div class="graphic-element graphic-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MantaGO Product Section -->
+    <section id="product" class="product">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">MantaGO Platform</span>
+                <h2 class="section-title">Revolutionizing Business Operations</h2>
+                <p class="section-description">
+                    A comprehensive platform designed to streamline workflows, optimize processes, 
+                    and accelerate business growth through intelligent automation and analytics.
+                </p>
+            </div>
+            
+            <div class="product-overview">
+                <div class="product-cards">
+                    <div class="product-card product-card-main">
+                        <div class="product-card-header">
+                            <div class="product-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="product-card-title">MantaGO Core</h3>
+                        </div>
+                        <p class="product-card-description">
+                            Central command center for all your business operations with real-time monitoring and control.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Real-time Dashboard</li>
+                            <li><i class="fas fa-check"></i> Process Automation</li>
+                            <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                            <li><i class="fas fa-check"></i> Team Collaboration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <div class="product-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="product-card-title">MantaGO Analytics</h3>
+                        </div>
+                        <p class="product-card-description">
+                            Powerful business intelligence tools that transform data into actionable insights.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Custom Reports</li>
+                            <li><i class="fas fa-check"></i> Predictive Analysis</li>
+                            <li><i class="fas fa-check"></i> Performance Metrics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <div class="product-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="product-card-title">MantaGO Automation</h3>
+                        </div>
+                        <p class="product-card-description">
+                            Intelligent automation engine that eliminates repetitive tasks and optimizes workflows.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Workflow Designer</li>
+                            <li><i class="fas fa-check"></i> Smart Triggers</li>
+                            <li><i class="fas fa-check"></i> Integration Hub</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="product-demo">
+                    <div class="demo-container">
+                        <div class="demo-header">
+                            <h3 class="demo-title">See MantaGO in Action</h3>
+                            <div class="demo-controls">
+                                <button class="demo-play-btn" id="demoPlayBtn" aria-label="Play demo video">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="demo-interactive-btn" id="interactiveDemoBtn">
+                                    <i class="fas fa-mouse-pointer"></i>
+                                    <span>Interactive Demo</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="demo-screen">
+                            <picture>
+                                <source srcset="assets/mantago-dashboard.webp" type="image/webp">
+                                <img src="assets/mantago-dashboard.jpg" alt="MantaGO Dashboard Screenshot" class="demo-image" loading="lazy">
+                            </picture>
+                            <div class="demo-overlay">
+                                <div class="demo-stats">
+                                    <div class="demo-stat">
+                                        <span class="demo-stat-number counter" data-target="2.5">0</span><span class="demo-stat-suffix">x</span>
+                                        <span class="demo-stat-label">Faster Processing</span>
+                                    </div>
+                                    <div class="demo-stat">
+                                        <span class="demo-stat-number counter" data-target="60">0</span><span class="demo-stat-suffix">%</span>
+                                        <span class="demo-stat-label">Cost Reduction</span>
+                                    </div>
+                                    <div class="demo-stat">
+                                        <span class="demo-stat-number">24/7</span>
+                                        <span class="demo-stat-label">Monitoring</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="demo-features">
+                                <div class="feature-hotspot" data-feature="dashboard" style="top: 20%; left: 15%;">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">Real-time Dashboard</div>
+                                </div>
+                                <div class="feature-hotspot" data-feature="analytics" style="top: 45%; left: 60%;">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">Advanced Analytics</div>
+                                </div>
+                                <div class="feature-hotspot" data-feature="automation" style="top: 70%; left: 30%;">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">Process Automation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Demo Tabs -->
+                    <div class="demo-tabs" id="demoTabs">
+                        <div class="demo-tab-nav">
+                            <button class="demo-tab-btn active" data-tab="dashboard">Dashboard</button>
+                            <button class="demo-tab-btn" data-tab="analytics">Analytics</button>
+                            <button class="demo-tab-btn" data-tab="automation">Automation</button>
+                            <button class="demo-tab-btn" data-tab="integration">Integration</button>
+                        </div>
+                        <div class="demo-tab-content">
+                            <div class="demo-tab-panel active" id="dashboard-tab">
+                                <h4>Real-time Dashboard</h4>
+                                <p>Get instant visibility into your business operations with our intuitive dashboard interface.</p>
+                                <ul>
+                                    <li>Live performance metrics</li>
+                                    <li>Customizable widgets</li>
+                                    <li>Multi-device access</li>
+                                </ul>
+                            </div>
+                            <div class="demo-tab-panel" id="analytics-tab">
+                                <h4>Advanced Analytics</h4>
+                                <p>Transform your data into actionable insights with powerful analytics tools.</p>
+                                <ul>
+                                    <li>Predictive modeling</li>
+                                    <li>Custom reports</li>
+                                    <li>Data visualization</li>
+                                </ul>
+                            </div>
+                            <div class="demo-tab-panel" id="automation-tab">
+                                <h4>Process Automation</h4>
+                                <p>Eliminate manual tasks and optimize workflows with intelligent automation.</p>
+                                <ul>
+                                    <li>Workflow designer</li>
+                                    <li>Smart triggers</li>
+                                    <li>Error handling</li>
+                                </ul>
+                            </div>
+                            <div class="demo-tab-panel" id="integration-tab">
+                                <h4>Seamless Integration</h4>
+                                <p>Connect with your existing tools and systems effortlessly.</p>
+                                <ul>
+                                    <li>500+ integrations</li>
+                                    <li>API access</li>
+                                    <li>Data synchronization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="technical-advantages">
+                <h3 class="advantages-title">Technical Advantages</h3>
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4 class="advantage-title">Cloud-Native Architecture</h4>
+                        <p class="advantage-description">Built for scale with microservices and containerization</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="advantage-title">Enterprise Security</h4>
+                        <p class="advantage-description">Bank-grade encryption and compliance standards</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4 class="advantage-title">Real-time Sync</h4>
+                        <p class="advantage-description">Instant data synchronization across all touchpoints</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h4 class="advantage-title">Easy Integration</h4>
+                        <p class="advantage-description">Connect with 500+ business tools and platforms</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="advantage-title">Mobile-First</h4>
+                        <p class="advantage-description">Native mobile apps for iOS and Android</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="advantage-title">AI-Powered</h4>
+                        <p class="advantage-description">Machine learning algorithms for intelligent insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Solutions</span>
+                <h2 class="section-title">Tailored for Every Business</h2>
+                <p class="section-description">
+                    From startups to enterprises, MantaGO adapts to your unique challenges and scales with your growth.
+                </p>
+            </div>
+            
+            <div class="solutions-content">
+                <div class="target-audiences">
+                    <h3 class="audiences-title">Who We Serve</h3>
+                    <div class="audience-cards">
+                        <div class="audience-card">
+                            <div class="audience-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4 class="audience-title">Startups</h4>
+                            <p class="audience-description">
+                                Establish efficient operations from day one with scalable foundations that grow with you.
+                            </p>
+                            <div class="audience-benefits">
+                                <span class="benefit">Rapid deployment</span>
+                                <span class="benefit">Cost-effective</span>
+                                <span class="benefit">Growth-ready</span>
+                            </div>
+                        </div>
+                        
+                        <div class="audience-card">
+                            <div class="audience-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4 class="audience-title">SMBs</h4>
+                            <p class="audience-description">
+                                Optimize existing processes and eliminate bottlenecks to compete with larger enterprises.
+                            </p>
+                            <div class="audience-benefits">
+                                <span class="benefit">Process optimization</span>
+                                <span class="benefit">Team productivity</span>
+                                <span class="benefit">Competitive edge</span>
+                            </div>
+                        </div>
+                        
+                        <div class="audience-card">
+                            <div class="audience-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <h4 class="audience-title">Enterprises</h4>
+                            <p class="audience-description">
+                                Transform complex operations across multiple departments and geographical locations.
+                            </p>
+                            <div class="audience-benefits">
+                                <span class="benefit">Enterprise-grade</span>
+                                <span class="benefit">Global deployment</span>
+                                <span class="benefit">Advanced security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pain-solutions">
+                    <h3 class="pain-solutions-title">Problems We Solve</h3>
+                    <div class="pain-solutions-grid">
+                        <div class="pain-solution-item">
+                            <div class="pain">
+                                <i class="fas fa-exclamation-triangle pain-icon"></i>
+                                <h4 class="pain-title">Manual Processes</h4>
+                                <p class="pain-description">Time-consuming manual tasks eating into productivity</p>
+                            </div>
+                            <div class="solution-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="solution">
+                                <i class="fas fa-magic solution-icon"></i>
+                                <h4 class="solution-title">Smart Automation</h4>
+                                <p class="solution-description">Intelligent workflows that handle repetitive tasks automatically</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pain-solution-item">
+                            <div class="pain">
+                                <i class="fas fa-chart-line pain-icon"></i>
+                                <h4 class="pain-title">Data Silos</h4>
+                                <p class="pain-description">Fragmented data across disconnected systems</p>
+                            </div>
+                            <div class="solution-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="solution">
+                                <i class="fas fa-network-wired solution-icon"></i>
+                                <h4 class="solution-title">Unified Platform</h4>
+                                <p class="solution-description">Single source of truth with real-time data synchronization</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pain-solution-item">
+                            <div class="pain">
+                                <i class="fas fa-eye-slash pain-icon"></i>
+                                <h4 class="pain-title">Lack of Visibility</h4>
+                                <p class="pain-description">No clear view of operations and performance metrics</p>
+                            </div>
+                            <div class="solution-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="solution">
+                                <i class="fas fa-chart-pie solution-icon"></i>
+                                <h4 class="solution-title">Real-time Insights</h4>
+                                <p class="solution-description">Comprehensive dashboards with actionable analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roi-benefits">
+                    <h3 class="roi-title">Measurable ROI</h3>
+                    <div class="roi-visualization">
+                        <div class="roi-chart">
+                            <div class="roi-item">
+                                <div class="roi-bar" data-percentage="65">
+                                    <span class="roi-percentage">65%</span>
+                                </div>
+                                <span class="roi-label">Productivity Increase</span>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-bar" data-percentage="45">
+                                    <span class="roi-percentage">45%</span>
+                                </div>
+                                <span class="roi-label">Cost Reduction</span>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-bar" data-percentage="80">
+                                    <span class="roi-percentage">80%</span>
+                                </div>
+                                <span class="roi-label">Time Savings</span>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-bar" data-percentage="55">
+                                    <span class="roi-percentage">55%</span>
+                                </div>
+                                <span class="roi-label">Error Reduction</span>
+                            </div>
+                        </div>
+                        <div class="roi-summary">
+                            <div class="roi-highlight">
+                                <span class="roi-number">6 months</span>
+                                <span class="roi-text">Average payback period</span>
+                            </div>
+                            <div class="roi-highlight">
+                                <span class="roi-number">3.2x</span>
+                                <span class="roi-text">Return on investment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Process</span>
+                <h2 class="section-title">Your Journey to Success</h2>
+                <p class="section-description">
+                    A proven methodology that ensures smooth implementation and maximum value from day one.
+                </p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-controls">
+                    <button class="timeline-control-btn" id="timelinePlayBtn">
+                        <i class="fas fa-play"></i>
+                        <span>Play Timeline</span>
+                    </button>
+                    <button class="timeline-control-btn" id="timelineResetBtn">
+                        <i class="fas fa-redo"></i>
+                        <span>Reset</span>
+                    </button>
+                </div>
+                <div class="timeline-container">
+                    <div class="process-step active" data-step="1">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Discovery & Consultation</h3>
+                            <p class="step-description">
+                                We analyze your current operations, identify pain points, and understand your goals 
+                                to create a tailored implementation strategy.
+                            </p>
+                            <div class="step-details">
+                                <div class="step-detail">
+                                    <i class="fas fa-search"></i>
+                                    <span>Business Analysis</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>Stakeholder Interviews</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-map"></i>
+                                    <span>Strategy Roadmap</span>
+                                </div>
+                            </div>
+                            <div class="step-duration">Duration: 1-2 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="2">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Implementation & Setup</h3>
+                            <p class="step-description">
+                                Our expert team configures MantaGO to match your specific requirements, 
+                                integrates with existing systems, and migrates your data securely.
+                            </p>
+                            <div class="step-details">
+                                <div class="step-detail">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>System Configuration</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-plug"></i>
+                                    <span>Integration Setup</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-database"></i>
+                                    <span>Data Migration</span>
+                                </div>
+                            </div>
+                            <div class="step-duration">Duration: 2-4 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="3">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Training & Onboarding</h3>
+                            <p class="step-description">
+                                Comprehensive training programs ensure your team masters MantaGO's capabilities 
+                                and can leverage its full potential from day one.
+                            </p>
+                            <div class="step-details">
+                                <div class="step-detail">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>User Training</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-book"></i>
+                                    <span>Documentation</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-video"></i>
+                                    <span>Video Tutorials</span>
+                                </div>
+                            </div>
+                            <div class="step-duration">Duration: 1-2 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="4">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Support & Optimization</h3>
+                            <p class="step-description">
+                                Ongoing support and continuous optimization ensure you get maximum value 
+                                as your business grows and evolves.
+                            </p>
+                            <div class="step-details">
+                                <div class="step-detail">
+                                    <i class="fas fa-headset"></i>
+                                    <span>24/7 Support</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Performance Monitoring</span>
+                                </div>
+                                <div class="step-detail">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Continuous Improvement</span>
+                                </div>
+                            </div>
+                            <div class="step-duration">Duration: Ongoing</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-line">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                </div>
+            </div>
+            
+            <div class="process-summary">
+                <div class="summary-stats">
+                    <div class="summary-stat">
+                        <span class="stat-number">4-8</span>
+                        <span class="stat-label">Weeks to Full Implementation</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">On-time Delivery Rate</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Availability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">
+                    Real stories from businesses that have transformed their operations with MantaGO.
+                </p>
+            </div>
+            
+            <div class="testimonials-content">
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "MantaGO transformed our entire operation. What used to take days now happens in hours. 
+                                The ROI was evident within the first quarter of implementation."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="assets/client-1.jpg" alt="Sarah Chen" class="author-image">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Chen</span>
+                                    <span class="author-position">CEO, TechFlow Solutions</span>
+                                    <span class="author-company">Manufacturing • 500+ employees</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-metrics">
+                            <div class="metric">
+                                <span class="metric-value">75%</span>
+                                <span class="metric-label">Time Saved</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$2.5M</span>
+                                <span class="metric-label">Annual Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "The team at Eslitec didn't just implement software; they became our strategic partners. 
+                                Sebastien's leadership and vision have been instrumental in our digital transformation."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="assets/client-2.jpg" alt="Marcus Rodriguez" class="author-image">
+                                <div class="author-info">
+                                    <span class="author-name">Marcus Rodriguez</span>
+                                    <span class="author-position">COO, Global Logistics Inc</span>
+                                    <span class="author-company">Logistics • 1000+ employees</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-metrics">
+                            <div class="metric">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label">Faster Processing</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$4.2M</span>
+                                <span class="metric-label">Revenue Increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "As a startup, we needed a solution that could scale with us. MantaGO gave us enterprise-level 
+                                capabilities without the enterprise complexity or cost."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="assets/client-3.jpg" alt="Emily Watson" class="author-image">
+                                <div class="author-info">
+                                    <span class="author-name">Emily Watson</span>
+                                    <span class="author-position">Founder, InnovateLab</span>
+                                    <span class="author-company">Tech Startup • 50+ employees</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-metrics">
+                            <div class="metric">
+                                <span class="metric-value">10x</span>
+                                <span class="metric-label">Scalability</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label">Cost Efficiency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-navigation">
+                    <button class="nav-btn nav-prev" id="testPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="nav-dots">
+                        <button class="nav-dot active" data-slide="0"></button>
+                        <button class="nav-dot" data-slide="1"></button>
+                        <button class="nav-dot" data-slide="2"></button>
+                    </div>
+                    <button class="nav-btn nav-next" id="testNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="case-studies">
+                <h3 class="case-studies-title">Featured Case Studies</h3>
+                <div class="case-studies-grid">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="assets/case-study-1.jpg" alt="Manufacturing Transformation" class="case-image">
+                        </div>
+                        <div class="case-study-content">
+                            <h4 class="case-title">Manufacturing Transformation</h4>
+                            <p class="case-description">How TechFlow Solutions automated their entire production line</p>
+                            <div class="case-results">
+                                <span class="case-result">75% efficiency gain</span>
+                                <span class="case-result">$2.5M saved annually</span>
+                            </div>
+                            <button class="case-btn">Read Full Story</button>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="assets/case-study-2.jpg" alt="Logistics Revolution" class="case-image">
+                        </div>
+                        <div class="case-study-content">
+                            <h4 class="case-title">Logistics Revolution</h4>
+                            <p class="case-description">Global Logistics Inc's journey to digital excellence</p>
+                            <div class="case-results">
+                                <span class="case-result">60% faster processing</span>
+                                <span class="case-result">$4.2M revenue boost</span>
+                            </div>
+                            <button class="case-btn">Read Full Story</button>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="assets/case-study-3.jpg" alt="Startup Success" class="case-image">
+                        </div>
+                        <div class="case-study-content">
+                            <h4 class="case-title">Startup Success</h4>
+                            <p class="case-description">How InnovateLab scaled from 10 to 100 employees seamlessly</p>
+                            <div class="case-results">
+                                <span class="case-result">10x scalability</span>
+                                <span class="case-result">90% cost efficiency</span>
+                            </div>
+                            <button class="case-btn">Read Full Story</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partner-logos">
+                <h3 class="partners-title">Trusted by Industry Leaders</h3>
+                <div class="logos-container">
+                    <div class="logo-item">
+                        <img src="assets/partner-1.svg" alt="Microsoft" class="partner-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/partner-2.svg" alt="Google Cloud" class="partner-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/partner-3.svg" alt="AWS" class="partner-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/partner-4.svg" alt="Salesforce" class="partner-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/partner-5.svg" alt="SAP" class="partner-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/partner-6.svg" alt="Oracle" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get in Touch</span>
+                <h2 class="section-title">Ready to Transform Your Business?</h2>
+                <p class="section-description">
+                    Let's discuss how MantaGO can revolutionize your operations. 
+                    Schedule a personalized demo or speak with our experts today.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <!-- Multi-step Form Progress -->
+                    <div class="form-progress" id="formProgress">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-circle">1</div>
+                            <span class="step-label">Basic Info</span>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-circle">2</div>
+                            <span class="step-label">Company Details</span>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-circle">3</div>
+                            <span class="step-label">Requirements</span>
+                        </div>
+                        <div class="progress-step" data-step="4">
+                            <div class="step-circle">4</div>
+                            <span class="step-label">Review</span>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form multi-step-form" id="contactForm">
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" data-step="1">
+                            <h3 class="step-title">Basic Information</h3>
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="form-input" required>
+                                <span class="form-error" id="fullNameError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                                <span class="form-error" id="phoneError"></span>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-primary next-step-btn" data-next="2">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Company Details -->
+                        <div class="form-step" data-step="2">
+                            <h3 class="step-title">Company Details</h3>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" id="company" name="company" class="form-input" required>
+                                <span class="form-error" id="companyError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="companySize" class="form-label">Company Size</label>
+                                <select id="companySize" name="companySize" class="form-select" required>
+                                    <option value="">Select company size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="500+">500+ employees</option>
+                                </select>
+                                <span class="form-error" id="companySizeError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="industry" class="form-label">Industry</label>
+                                <select id="industry" name="industry" class="form-select" required>
+                                    <option value="">Select your industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="logistics">Logistics</option>
+                                    <option value="education">Education</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="form-error" id="industryError"></span>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step-btn" data-prev="1">Previous</button>
+                                <button type="button" class="btn btn-primary next-step-btn" data-next="3">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Requirements -->
+                        <div class="form-step" data-step="3">
+                            <h3 class="step-title">Your Requirements</h3>
+                            <div class="form-group">
+                                <label for="interest" class="form-label">Primary Interest</label>
+                                <select id="interest" name="interest" class="form-select" required>
+                                    <option value="">Select your primary interest</option>
+                                    <option value="demo">Schedule a Demo</option>
+                                    <option value="consultation">Free Consultation</option>
+                                    <option value="pricing">Pricing Information</option>
+                                    <option value="integration">Integration Support</option>
+                                    <option value="implementation">Implementation Services</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="form-error" id="interestError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="timeline" class="form-label">Implementation Timeline</label>
+                                <select id="timeline" name="timeline" class="form-select">
+                                    <option value="">Select timeline</option>
+                                    <option value="immediate">Immediate (1-3 months)</option>
+                                    <option value="short">Short-term (3-6 months)</option>
+                                    <option value="medium">Medium-term (6-12 months)</option>
+                                    <option value="long">Long-term (12+ months)</option>
+                                    <option value="exploring">Just exploring</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Budget Range</label>
+                                <select id="budget" name="budget" class="form-select">
+                                    <option value="">Select budget range</option>
+                                    <option value="10k-50k">$10,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="100k-250k">$100,000 - $250,000</option>
+                                    <option value="250k+">$250,000+</option>
+                                    <option value="not-sure">Not sure yet</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Additional Details</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                    placeholder="Tell us about your specific business challenges, goals, and requirements..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="attachments" class="form-label">Supporting Documents (Optional)</label>
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <input type="file" id="attachments" name="attachments" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" class="file-input">
+                                    <div class="file-upload-placeholder">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop files here or <span class="file-upload-link">browse</span></p>
+                                        <small>PDF, DOC, XLS, PPT files up to 10MB each</small>
+                                    </div>
+                                    <div class="file-list" id="fileList"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step-btn" data-prev="2">Previous</button>
+                                <button type="button" class="btn btn-primary next-step-btn" data-next="4">Review & Submit</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Review & Submit -->
+                        <div class="form-step" data-step="4">
+                            <h3 class="step-title">Review Your Information</h3>
+                            <div class="form-review" id="formReview">
+                                <!-- Review content will be populated by JavaScript -->
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-text">Subscribe to our newsletter for industry insights and updates</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="privacy" name="privacy" class="form-checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-text">I agree to the <a href="#privacy-policy" class="privacy-link">Privacy Policy</a> and <a href="#terms-of-service" class="privacy-link">Terms of Service</a></span>
+                                </label>
+                                <span class="form-error" id="privacyError"></span>
+                            </div>
+                            
+                            <!-- reCAPTCHA Placeholder -->
+                            <div class="recaptcha-container">
+                                <div class="recaptcha-placeholder">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>reCAPTCHA verification would appear here</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step-btn" data-prev="3">Previous</button>
+                                <button type="submit" class="btn btn-primary btn-large form-submit" id="submitBtn">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Sending...
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h3 class="contact-title">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Headquarters</h4>
+                                <p class="contact-value">
+                                    33 Ubi Avenue 3, #08-13, Vertex<br>
+                                    Singapore 408868
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Phone</h4>
+                                <p class="contact-value">
+                                    <a href="tel:+6512345678">+65 1234 5678</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Email</h4>
+                                <p class="contact-value">
+                                    <a href="mailto:hello@eslitec.com">hello@eslitec.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Business Hours</h4>
+                                <p class="contact-value">
+                                    Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                    Saturday: 10:00 AM - 2:00 PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h4 class="social-title">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h4 class="actions-title">Quick Actions</h4>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Schedule Demo</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-download"></i>
+                                <span>Download Brochure</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-question-circle"></i>
+                                <span>FAQ</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Find Us Here</h4>
+                        <p>Interactive map integration placeholder</p>
+                        <button class="map-btn">Open in Maps</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/eslitec-logo-white.svg" alt="Eslitec" class="footer-logo-img">
+                        <span class="footer-brand-text">MantaGO</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming business operations through innovative technology solutions. 
+                        Partner with us to revolutionize your workflow and accelerate growth.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">MantaGO Core</a></li>
+                            <li><a href="#" class="footer-link">Analytics</a></li>
+                            <li><a href="#" class="footer-link">Automation</a></li>
+                            <li><a href="#" class="footer-link">Integrations</a></li>
+                            <li><a href="#" class="footer-link">Mobile Apps</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Solutions</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">For Startups</a></li>
+                            <li><a href="#" class="footer-link">For SMBs</a></li>
+                            <li><a href="#" class="footer-link">For Enterprises</a></li>
+                            <li><a href="#" class="footer-link">Industry Solutions</a></li>
+                            <li><a href="#" class="footer-link">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">Documentation</a></li>
+                            <li><a href="#" class="footer-link">API Reference</a></li>
+                            <li><a href="#" class="footer-link">Help Center</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                            <li><a href="#" class="footer-link">Webinars</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">About Us</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">News</a></li>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                            <li><a href="#" class="footer-link">Partners</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        © 2024 Eslitec. All rights reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-legal-link">Privacy Policy</a>
+                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                        <a href="#" class="footer-legal-link">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </main>
+    
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-overlay" id="videoModalOverlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <iframe id="videoIframe" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer"></div>
+    
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h4>We value your privacy</h4>
+                    <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                </div>
+                <div class="cookie-actions">
+                    <button class="btn btn-secondary" id="cookieSettings">Settings</button>
+                    <button class="btn btn-primary" id="cookieAccept">Accept All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Performance Analytics Placeholder -->
+    <script>
+        // Google Analytics placeholder
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Scroll depth tracking
+        let scrollDepthTracked = new Set();
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            [25, 50, 75, 90].forEach(depth => {
+                if (scrollPercent >= depth && !scrollDepthTracked.has(depth)) {
+                    scrollDepthTracked.add(depth);
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'engagement',
+                        'event_label': `${depth}%`,
+                        'value': depth
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="advanced-features.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed');
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

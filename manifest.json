@@ -1,0 +1,194 @@
+{
+  "name": "MantaGO - Business Operations Platform",
+  "short_name": "MantaGO",
+  "description": "Transform your business operations with MantaGO by Eslitec. Revolutionary platform for workflow optimization, process automation, and business growth.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/desktop-home.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "MantaGO Homepage on Desktop"
+    },
+    {
+      "src": "/assets/screenshots/desktop-dashboard.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "MantaGO Dashboard View"
+    },
+    {
+      "src": "/assets/screenshots/mobile-home.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "MantaGO Mobile Homepage"
+    },
+    {
+      "src": "/assets/screenshots/mobile-features.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "MantaGO Features on Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Schedule Demo",
+      "short_name": "Demo",
+      "description": "Schedule a product demonstration",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/assets/icons/demo-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "View Features",
+      "short_name": "Features",
+      "description": "Explore MantaGO features",
+      "url": "/#product",
+      "icons": [
+        {
+          "src": "/assets/icons/features-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/assets/icons/contact-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.eslitec.mantago",
+      "id": "com.eslitec.mantago"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/mantago/id1234567890"
+    }
+  ],
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "web+mantago",
+      "url": "/protocol?url=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "file_handlers": [
+    {
+      "action": "/open",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"],
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["application/pdf", "image/*"]
+        }
+      ]
+    }
+  },
+  "gcm_sender_id": "1234567890",
+  "gcm_user_visible_only": true
+}
