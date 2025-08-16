@@ -345,6 +345,132 @@ function initializeContactForm() {
     
     if (!contactForm) return;
     
+    // Multi-step form management
+    let currentStep = 1;
+    const totalSteps = 4;
+    
+    // Initialize multi-step form navigation
+    const nextBtns = document.querySelectorAll('.next-step-btn');
+    const prevBtns = document.querySelectorAll('.prev-step-btn');
+    const formSteps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    
+    // Handle next button clicks
+    nextBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const nextStep = parseInt(this.dataset.next);
+            
+            // Validate current step before moving forward
+            if (validateCurrentStep(currentStep)) {
+                showStep(nextStep);
+                currentStep = nextStep;
+                
+                // If moving to review step, populate review
+                if (nextStep === 4) {
+                    populateReview();
+                }
+            }
+        });
+    });
+    
+    // Handle previous button clicks
+    prevBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const prevStep = parseInt(this.dataset.prev);
+            showStep(prevStep);
+            currentStep = prevStep;
+        });
+    });
+    
+    // Function to show specific step
+    function showStep(stepNumber) {
+        // Hide all steps
+        formSteps.forEach(step => {
+            step.classList.remove('active');
+        });
+        
+        // Show target step
+        const targetStep = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+        if (targetStep) {
+            targetStep.classList.add('active');
+        }
+        
+        // Update progress indicators
+        progressSteps.forEach((step, index) => {
+            if (index < stepNumber) {
+                step.classList.add('completed');
+                step.classList.remove('active');
+            } else if (index === stepNumber - 1) {
+                step.classList.add('active');
+                step.classList.remove('completed');
+            } else {
+                step.classList.remove('active', 'completed');
+            }
+        });
+        
+        // Scroll to top of form
+        contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Function to validate current step
+    function validateCurrentStep(step) {
+        const currentStepElement = document.querySelector(`.form-step[data-step="${step}"]`);
+        const requiredFields = currentStepElement.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            const errorSpan = document.getElementById(field.id + 'Error');
+            if (!field.value.trim()) {
+                if (errorSpan) {
+                    errorSpan.textContent = 'This field is required';
+                    errorSpan.style.display = 'block';
+                }
+                field.style.borderColor = '#ef4444';
+                isValid = false;
+            } else {
+                if (errorSpan) {
+                    errorSpan.style.display = 'none';
+                }
+                field.style.borderColor = '';
+            }
+        });
+        
+        return isValid;
+    }
+    
+    // Function to populate review step
+    function populateReview() {
+        const reviewContainer = document.getElementById('formReview');
+        if (!reviewContainer) return;
+        
+        const formData = new FormData(contactForm);
+        let reviewHTML = '<div class="review-content">';
+        
+        // Basic Information
+        reviewHTML += '<div class="review-section"><h4>Basic Information</h4>';
+        reviewHTML += `<p><strong>Name:</strong> ${formData.get('fullName') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Email:</strong> ${formData.get('email') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Phone:</strong> ${formData.get('phone') || 'Not provided'}</p></div>`;
+        
+        // Company Details
+        reviewHTML += '<div class="review-section"><h4>Company Details</h4>';
+        reviewHTML += `<p><strong>Company:</strong> ${formData.get('company') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Size:</strong> ${formData.get('companySize') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Industry:</strong> ${formData.get('industry') || 'Not provided'}</p></div>`;
+        
+        // Requirements
+        reviewHTML += '<div class="review-section"><h4>Requirements</h4>';
+        reviewHTML += `<p><strong>Interest:</strong> ${formData.get('interest') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Timeline:</strong> ${formData.get('timeline') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Budget:</strong> ${formData.get('budget') || 'Not provided'}</p>`;
+        reviewHTML += `<p><strong>Message:</strong> ${formData.get('message') || 'Not provided'}</p></div>`;
+        
+        reviewHTML += '</div>';
+        reviewContainer.innerHTML = reviewHTML;
+    }
+    
     // Form validation rules
     const validationRules = {
         fullName: {

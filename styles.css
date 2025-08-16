@@ -3394,3 +3394,73 @@ textarea:focus {
     border-radius: 20px !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
 }
+
+/* Multi-step Form Fixes */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress-step.completed .step-circle {
+    background: var(--primary, #2563eb);
+    color: white;
+}
+
+.progress-step.active .step-circle {
+    background: var(--primary, #2563eb);
+    color: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.form-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.review-content {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.review-section {
+    margin-bottom: 1.5rem;
+}
+
+.review-section:last-child {
+    margin-bottom: 0;
+}
+
+.review-section h4 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.review-section p {
+    margin: 0.25rem 0;
+    color: #6b7280;
+}
+
+.review-section strong {
+    color: #374151;
+    font-weight: 600;
+}
