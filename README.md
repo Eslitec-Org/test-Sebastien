@@ -1,6 +1,6 @@
 # MantaGO Website
 
-A modern, responsive one-page website showcasing MantaGO products and Eslitec Pte. Ltd.'s capabilities under the leadership of Khoo Yong Ming (邱永明).
+A modern, responsive one-page website showcasing MantaGO products and Eslitec Pte. Ltd.'s capabilities under the leadership of Regional Director Khoo Yong Ming (邱永明).
 
 ## Company Information
 - **Company Name**: ESLITEC PTE. LTD.
@@ -9,6 +9,7 @@ A modern, responsive one-page website showcasing MantaGO products and Eslitec Pt
 - **Type**: Exempt Private Company Limited by Shares
 - **Primary Activity**: Development of Software and Applications (SSIC 62011)
 - **Registered Address**: 33 Ubi Avenue 3, #08-13, Vertex, Singapore 408868
+- **Regional Director**: Khoo Yong Ming (邱永明)
 
 ## 🚀 Features
 
