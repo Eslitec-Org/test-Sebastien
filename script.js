@@ -355,11 +355,30 @@ function initializeContactForm() {
     const formSteps = document.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-step');
     
+    console.log('Form initialized. Found buttons:', nextBtns.length, 'next buttons,', prevBtns.length, 'prev buttons');
+    console.log('Found steps:', formSteps.length, 'form steps');
+    
+    // Ensure first step is visible
+    if (formSteps.length > 0) {
+        formSteps.forEach((step, index) => {
+            if (index === 0) {
+                step.classList.add('active');
+                step.style.display = 'block';
+            } else {
+                step.classList.remove('active');
+                step.style.display = 'none';
+            }
+        });
+    }
+    
     // Handle next button clicks
     nextBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('Next button clicked, current step:', currentStep);
             const nextStep = parseInt(this.dataset.next);
+            console.log('Moving to step:', nextStep);
             
             // Validate current step before moving forward
             if (validateCurrentStep(currentStep)) {
@@ -370,6 +389,8 @@ function initializeContactForm() {
                 if (nextStep === 4) {
                     populateReview();
                 }
+            } else {
+                console.log('Validation failed for step:', currentStep);
             }
         });
     });
@@ -386,15 +407,22 @@ function initializeContactForm() {
     
     // Function to show specific step
     function showStep(stepNumber) {
+        console.log('Showing step:', stepNumber);
+        
         // Hide all steps
         formSteps.forEach(step => {
             step.classList.remove('active');
+            step.style.display = 'none';
         });
         
         // Show target step
         const targetStep = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
         if (targetStep) {
             targetStep.classList.add('active');
+            targetStep.style.display = 'block';
+            console.log('Step shown successfully');
+        } else {
+            console.error('Target step not found:', stepNumber);
         }
         
         // Update progress indicators
@@ -411,24 +439,35 @@ function initializeContactForm() {
         });
         
         // Scroll to top of form
-        contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const formContainer = document.querySelector('#contact');
+        if (formContainer) {
+            formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
     
     // Function to validate current step
     function validateCurrentStep(step) {
         const currentStepElement = document.querySelector(`.form-step[data-step="${step}"]`);
+        if (!currentStepElement) {
+            console.error('Step element not found:', step);
+            return false;
+        }
+        
         const requiredFields = currentStepElement.querySelectorAll('[required]');
         let isValid = true;
         
         requiredFields.forEach(field => {
             const errorSpan = document.getElementById(field.id + 'Error');
-            if (!field.value.trim()) {
+            const value = field.value ? field.value.trim() : '';
+            
+            if (!value) {
                 if (errorSpan) {
                     errorSpan.textContent = 'This field is required';
                     errorSpan.style.display = 'block';
                 }
                 field.style.borderColor = '#ef4444';
                 isValid = false;
+                console.log('Field validation failed:', field.id);
             } else {
                 if (errorSpan) {
                     errorSpan.style.display = 'none';
@@ -437,6 +476,7 @@ function initializeContactForm() {
             }
         });
         
+        console.log('Step', step, 'validation result:', isValid);
         return isValid;
     }
     
