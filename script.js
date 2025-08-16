@@ -627,52 +627,170 @@ function initializeContactForm() {
         errorSpan.style.display = 'none';
     }
     
-    function submitForm() {
+    async function submitForm() {
         // Show loading state
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
         
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
+        // Collect form data
+        const formData = new FormData(contactForm);
+        
+        // Create Discord webhook message
+        const webhookData = {
+            username: "MantaGO Contact Form",
+            avatar_url: "https://eslitec-org.github.io/test-Sebastien/assets/Eslite%20Logo-white.jpg",
+            embeds: [{
+                title: "📧 New Contact Form Submission",
+                color: 2563611, // Blue color
+                timestamp: new Date().toISOString(),
+                fields: [
+                    {
+                        name: "👤 Full Name",
+                        value: formData.get('fullName') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "📧 Email",
+                        value: formData.get('email') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "📱 Phone",
+                        value: formData.get('phone') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "🏢 Company",
+                        value: formData.get('company') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "👥 Company Size",
+                        value: formData.get('companySize') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "🏭 Industry",
+                        value: formData.get('industry') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "🎯 Primary Interest",
+                        value: formData.get('interest') || 'Not provided',
+                        inline: false
+                    },
+                    {
+                        name: "⏰ Timeline",
+                        value: formData.get('timeline') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "💰 Budget",
+                        value: formData.get('budget') || 'Not provided',
+                        inline: true
+                    },
+                    {
+                        name: "💬 Message",
+                        value: formData.get('message') || 'No additional message',
+                        inline: false
+                    },
+                    {
+                        name: "📰 Newsletter",
+                        value: formData.get('newsletter') ? '✅ Subscribed' : '❌ Not subscribed',
+                        inline: true
+                    },
+                    {
+                        name: "🔒 Privacy Policy",
+                        value: formData.get('privacy') ? '✅ Accepted' : '❌ Not accepted',
+                        inline: true
+                    }
+                ],
+                footer: {
+                    text: "MantaGO Contact Form • Eslitec Pte. Ltd.",
+                    icon_url: "https://eslitec-org.github.io/test-Sebastien/assets/Eslite%20Logo-white.jpg"
+                }
+            }]
+        };
+        
+        try {
+            // Send to Discord webhook
+            const webhookUrl = 'https://discord.com/api/webhooks/1047786198199963719/8ZmxdEwFHRcpIG-mLHL7-Z0pnkISRF2nWQQjdeCuceAHSUZCSm3uTWbM8yBsXVOi2jKY';
+            
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookData)
+            });
+            
+            if (response.ok) {
+                // Success
+                console.log('Form submitted successfully to Discord');
+                showSuccessMessage();
+                contactForm.reset();
+                // Reset to first step
+                if (typeof showStep === 'function') {
+                    showStep(1);
+                    currentStep = 1;
+                }
+            } else {
+                // Error
+                console.error('Discord webhook error:', response.status);
+                showErrorMessage('Failed to send message. Please try again or contact us directly.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            showErrorMessage('Network error. Please check your connection and try again.');
+        } finally {
             // Hide loading state
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-            
-            // Show success message
-            showSuccessMessage();
-            
-            // Reset form
-            contactForm.reset();
-        }, 2000);
+        }
     }
     
     function showSuccessMessage() {
         // Create success message element
         const successMessage = document.createElement('div');
+        successMessage.className = 'form-message form-message-success';
         successMessage.innerHTML = `
-            <div style="
-                background: var(--success);
-                color: white;
-                padding: var(--space-4);
-                border-radius: var(--radius);
-                margin-bottom: var(--space-4);
-                display: flex;
-                align-items: center;
-                gap: var(--space-2);
-            ">
-                <i class="fas fa-check-circle"></i>
-                <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
-            </div>
+            <i class="fas fa-check-circle"></i>
+            <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
         `;
         
         // Insert before form
-        contactForm.parentNode.insertBefore(successMessage.firstElementChild, contactForm);
+        contactForm.parentNode.insertBefore(successMessage, contactForm);
+        
+        // Scroll to message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         
         // Remove after 5 seconds
         setTimeout(() => {
-            const messageEl = contactForm.parentNode.querySelector('[style*="var(--success)"]');
-            if (messageEl) {
-                messageEl.remove();
+            if (successMessage && successMessage.parentNode) {
+                successMessage.remove();
+            }
+        }, 5000);
+    }
+    
+    function showErrorMessage(message) {
+        // Create error message element
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'form-message form-message-error';
+        errorMessage.innerHTML = `
+            <i class="fas fa-exclamation-circle"></i>
+            <span>${message}</span>
+        `;
+        
+        // Insert before form
+        contactForm.parentNode.insertBefore(errorMessage, contactForm);
+        
+        // Scroll to message
+        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Remove after 5 seconds
+        setTimeout(() => {
+            if (errorMessage && errorMessage.parentNode) {
+                errorMessage.remove();
             }
         }, 5000);
     }

@@ -3382,17 +3382,18 @@ textarea:focus {
     opacity: 0.9;
 }
 
-/* MantaGO Chat Widget Override */
+/* MantaGO Chat Widget Override - Simplified */
 #mantagoChat {
     position: fixed !important;
     right: 20px !important;
-    bottom: 20px !important;
+    bottom: 80px !important;  /* Moved up to avoid overlap */
     z-index: 9998 !important;
 }
 
 #mantagoChat-iframe {
-    border-radius: 20px !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+    /* Removed background and shadow for cleaner look */
+    border: none !important;
+    background: transparent !important;
 }
 
 /* Multi-step Form Fixes */
@@ -3463,4 +3464,40 @@ textarea:focus {
 .review-section strong {
     color: #374151;
     font-weight: 600;
+}
+
+/* Form Message Styles */
+.form-message {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInUp 0.3s ease-out;
+}
+
+.form-message-success {
+    background: #10b981;
+    color: white;
+}
+
+.form-message-error {
+    background: #ef4444;
+    color: white;
+}
+
+.form-message i {
+    font-size: 1.25rem;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
